@@ -1,0 +1,146 @@
+html, body{
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    margin: 0;
+}
+.grass, .sky, .road{
+    position: relative;
+}
+.sky{
+    height: 40%;
+    background-color: skyblue;
+}
+.grass{
+    height: 20%;
+    background-color: green;
+    display: flex;
+    justify-content: center;
+}
+.grass img {
+   height: 100%;
+}
+.road{
+    height: 40%;
+    background-color: dimgray;
+    box-sizing: border-box;
+    border-top: 10px solid grey;
+    border-bottom: 10px solid grey;
+}
+.lines{
+    box-sizing: border-box;
+    border: 5px dashed white;
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    height: 0;
+}
+.Orion1{
+    position: absolute;
+    top: -65px;
+    left: 0px;
+    animation-name: drive;
+    animation-duration: 3s;
+    animation-fill-mode: both;
+    animation-iteration-count: infinite;
+    animation-timing-function:linear;
+    
+}
+
+.Orion2{
+    position: absolute;
+    top:70px;
+    left: 0;
+    animation-name: drive;
+    animation-duration: 5s;
+    animation-fill-mode: both;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+
+}
+
+.cloud{
+    position: absolute;
+}
+
+.cloud:nth-child(1){
+    width: 200px;
+    top: 120px;
+    opacity: 0.5;
+    animation: wind 80s linear infinite reverse;
+}
+.cloud:nth-child(2){
+    width: 300px;
+    top: 0;
+    animation: wind 50s linear infinite reverse;
+}
+
+/* Bird styling */
+.bird {
+    height: 100%;
+    transform: rotate(180deg);
+    animation: bird 60s linear infinite reverse;
+}
+
+/* plant section */
+.img_wrapper {
+  margin-top: 10px;
+    
+}
+
+
+.tree1 {
+    position: absolute;
+    top: 0px;
+    left: -150px;
+    animation: tree1 10s linear infinite reverse;
+    animation-delay: 4s;
+}
+.grass1 {
+    position: absolute;
+    top: 0px;
+    left: -200px;
+    animation: grass1 10s linear infinite reverse;
+    animation-delay: 6s;
+}
+.tree2 {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    animation: tree2 10s linear infinite reverse;
+
+}
+@keyframes drive{
+    from{transform: translateX(-200px)}
+    to{ transform: translateX(1400px);}
+}
+
+@keyframes wind{
+    from{left: -350px}
+    to{left: 100%}
+}
+
+
+/* key frames for tree */
+
+
+@keyframes tree1{
+    from{transform: translateX(-200px)}
+    to{ transform: translateX(1500px)}
+}
+
+@keyframes grass1{
+    from{transform: translateX(-200px)}
+    to{ transform: translateX(1550px);}
+}
+
+@keyframes tree2{
+    from{transform: translateX(-200px)}
+    to{ transform: translateX(1400px);}
+}
+
+/* keyframe for bird */
+@keyframes bird{
+    from{transform: translateX(-300px)}
+    to{ transform: translateX(1400px);}
+}
