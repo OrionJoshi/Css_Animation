@@ -4,22 +4,27 @@ html, body{
     overflow: hidden;
     margin: 0;
 }
+
 .grass, .sky, .road{
     position: relative;
 }
+
 .sky{
     height: 40%;
     background-color: skyblue;
 }
+
 .grass{
     height: 20%;
     background-color: green;
     display: flex;
     justify-content: center;
 }
+
 .grass img {
    height: 100%;
 }
+
 .road{
     height: 40%;
     background-color: dimgray;
@@ -27,6 +32,7 @@ html, body{
     border-top: 10px solid grey;
     border-bottom: 10px solid grey;
 }
+
 .lines{
     box-sizing: border-box;
     border: 5px dashed white;
@@ -35,6 +41,7 @@ html, body{
     width: 100%;
     height: 0;
 }
+
 .Orion1{
     position: absolute;
     top: -65px;
@@ -44,7 +51,6 @@ html, body{
     animation-fill-mode: both;
     animation-iteration-count: infinite;
     animation-timing-function:linear;
-    
 }
 
 .Orion2{
@@ -56,7 +62,6 @@ html, body{
     animation-fill-mode: both;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
-
 }
 
 .cloud{
@@ -69,6 +74,7 @@ html, body{
     opacity: 0.5;
     animation: wind 80s linear infinite reverse;
 }
+
 .cloud:nth-child(2){
     width: 300px;
     top: 0;
@@ -81,13 +87,10 @@ html, body{
     transform: rotate(180deg);
     animation: bird 60s linear infinite reverse;
 }
-
 /* plant section */
 .img_wrapper {
-  margin-top: 10px;
-    
+    margin-top: 10px;
 }
-
 
 .tree1 {
     position: absolute;
@@ -96,6 +99,7 @@ html, body{
     animation: tree1 10s linear infinite reverse;
     animation-delay: 4s;
 }
+
 .grass1 {
     position: absolute;
     top: 0px;
@@ -103,27 +107,27 @@ html, body{
     animation: grass1 10s linear infinite reverse;
     animation-delay: 6s;
 }
+
 .tree2 {
     position: absolute;
     top: 0px;
     left: 0px;
     animation: tree2 10s linear infinite reverse;
-
 }
+/* key frame for people animation */
+
 @keyframes drive{
     from{transform: translateX(-200px)}
     to{ transform: translateX(1400px);}
 }
 
+/* keyframe for cloud animation */
 @keyframes wind{
     from{left: -350px}
     to{left: 100%}
 }
 
-
 /* key frames for tree */
-
-
 @keyframes tree1{
     from{transform: translateX(-200px)}
     to{ transform: translateX(1500px)}
