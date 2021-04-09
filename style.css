@@ -84,8 +84,9 @@ html, body{
 /* Bird styling */
 .bird {
     height: 100%;
-    transform: rotate(180deg);
-    animation: bird 60s linear infinite reverse;
+    position: absolute;
+    right:0;
+    animation: bird 10s linear infinite ;
 }
 /* plant section */
 .img_wrapper {
@@ -117,8 +118,8 @@ html, body{
 /* key frame for people animation */
 
 @keyframes drive{
-    from{transform: translateX(-200px)}
-    to{ transform: translateX(1400px);}
+    from{left: -100px}
+    to{ left: 100%}
 }
 
 /* keyframe for cloud animation */
@@ -129,22 +130,22 @@ html, body{
 
 /* key frames for tree */
 @keyframes tree1{
-    from{transform: translateX(-200px)}
-    to{ transform: translateX(1500px)}
+     from{left:-400px}
+    to{ left:100%}
 }
 
 @keyframes grass1{
-    from{transform: translateX(-200px)}
-    to{ transform: translateX(1550px);}
+    from{left:-400px}
+    to{ left:100%}
 }
 
 @keyframes tree2{
-    from{transform: translateX(-200px)}
-    to{ transform: translateX(1400px);}
+    from{left:-400px}
+    to{ left:100%}
 }
 
 /* keyframe for bird */
 @keyframes bird{
-    from{transform: translateX(-300px)}
-    to{ transform: translateX(1400px);}
+    from{ right:-400px;}
+    to{right: 100%;}
 }
