@@ -1,151 +1,298 @@
-html, body{
-    height: 100%;
-    width: 100%;
-    overflow: hidden;
-    margin: 0;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+  min-height: 640px;
+  width: 100%;
+  overflow-x: hidden;
+  overflow-y: visible;
+  margin: 0;
+}
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  width: 0;
+}
+.grass,
+.sky,
+.road {
+  position: relative;
 }
 
-.grass, .sky, .road{
-    position: relative;
+.sky {
+  height: 40%;
+  background-color: skyblue;
 }
-
-.sky{
-    height: 40%;
-    background-color: skyblue;
+.helicopter-left {
+  position: absolute;
+  animation: left-helicopter 10s ease-in-out infinite;
+  left: -100px;
+  top: 10%;
+  transform: rotateY(180deg) scale(0.5);
 }
-
-.grass{
-    height: 20%;
-    background-color: green;
-    display: flex;
-    justify-content: center;
+.helicopter-flying {
+  position: absolute;
+  animation: flying-helicopter 20s ease-in-out infinite;
+  right: 0px;
+  top: 50%;
+  transform: scale(0.7);
 }
-
+.grass {
+  height: 20%;
+  background-color: green;
+  display: flex;
+  justify-content: center;
+}
+.helicopter-landed {
+  position: absolute;
+  z-index: 2;
+  left: 52.5%;
+  top: -25px;
+  transform: translate(-50%, 0) scale(0.55) rotateY(-10deg);
+}
+.helicopter-base {
+  position: absolute;
+  content: "";
+  height: 50px;
+  width: 90px;
+  background-color: #eee;
+  border: 5px solid dimgray;
+  box-shadow: 1px 6px 3px #222;
+  display: flex;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, 0) skew(-5deg) rotateX(60deg);
+}
 .grass img {
-   height: 100%;
+  height: 100%;
 }
 
-.road{
-    height: 40%;
-    background-color: dimgray;
-    box-sizing: border-box;
-    border-top: 10px solid grey;
-    border-bottom: 10px solid grey;
+.road {
+  height: 40%;
+  background-color: dimgray;
+  box-sizing: border-box;
+  border-top: 10px solid grey;
+  border-bottom: 10px solid grey;
 }
 
-.lines{
-    box-sizing: border-box;
-    border: 5px dashed white;
-    position: absolute;
-    top: 50%;
-    width: 100%;
-    height: 0;
+.lines {
+  box-sizing: border-box;
+  border: 5px dashed white;
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  height: 0;
 }
 
-.Orion1{
-    position: absolute;
-    top: -65px;
-    left: 0px;
-    animation-name: drive;
-    animation-duration: 3s;
-    animation-fill-mode: both;
-    animation-iteration-count: infinite;
-    animation-timing-function:linear;
+.Orion1 {
+  position: absolute;
+  top: -70px;
+  left: 0px;
+  animation-name: drive;
+  animation-duration: 3s;
+  animation-fill-mode: both;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  z-index: 5;
+  transform: scale(0.8);
 }
 
-.Orion2{
-    position: absolute;
-    top:70px;
-    left: 0;
-    animation-name: drive;
-    animation-duration: 5s;
-    animation-fill-mode: both;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
+.Orion2 {
+  position: absolute;
+  top: 70px;
+  left: 0;
+  animation-name: drive;
+  animation-duration: 5s;
+  animation-fill-mode: both;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  z-index: 8;
+}
+.car {
+  height: 80px;
+  top: 30px;
+  position: absolute;
+  animation: car;
+  transform: rotateY(180deg);
+  animation: car 3s linear infinite;
+  z-index: 6;
+}
+.man {
+  top: -80px;
+  position: absolute;
+  height: 80px;
+  left: 10%;
+  z-index: 4;
+}
+.cloud {
+  position: absolute;
 }
 
-.cloud{
-    position: absolute;
+.cloud:nth-child(1) {
+  width: 200px;
+  top: 120px;
+  opacity: 0.5;
+  animation: wind 80s linear infinite reverse;
 }
 
-.cloud:nth-child(1){
-    width: 200px;
-    top: 120px;
-    opacity: 0.5;
-    animation: wind 80s linear infinite reverse;
-}
-
-.cloud:nth-child(2){
-    width: 300px;
-    top: 0;
-    animation: wind 50s linear infinite reverse;
+.cloud:nth-child(2) {
+  width: 300px;
+  top: 0;
+  animation: wind 50s linear infinite reverse;
 }
 
 /* Bird styling */
 .bird {
-    height: 100%;
-    position: absolute;
-    right:0;
-    animation: bird 10s linear infinite ;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  animation: bird 10s linear infinite;
 }
 /* plant section */
 .img_wrapper {
-    margin-top: 10px;
+  margin-top: 10px;
 }
-
+.tree1,
+.grass1,
+.tree2 {
+  z-index: 3;
+}
 .tree1 {
-    position: absolute;
-    top: 0px;
-    left: -150px;
-    animation: tree1 10s linear infinite reverse;
-    animation-delay: 4s;
+  position: absolute;
+  top: 0px;
+  left: -150px;
+  animation: tree1 10s linear infinite reverse;
+  animation-delay: 4s;
 }
 
 .grass1 {
-    position: absolute;
-    top: 0px;
-    left: -200px;
-    animation: grass1 10s linear infinite reverse;
-    animation-delay: 6s;
+  position: absolute;
+  top: 0px;
+  left: -200px;
+  animation: grass1 10s linear infinite reverse;
+  animation-delay: 6s;
 }
 
 .tree2 {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    animation: tree2 10s linear infinite reverse;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  animation: tree2 10s linear infinite reverse;
 }
 /* key frame for people animation */
 
-@keyframes drive{
-    from{left: -100px}
-    to{ left: 100%}
+@keyframes drive {
+  from {
+    left: -100px;
+  }
+  to {
+    left: 100%;
+  }
 }
 
 /* keyframe for cloud animation */
-@keyframes wind{
-    from{left: -350px}
-    to{left: 100%}
+@keyframes wind {
+  from {
+    left: -350px;
+  }
+  to {
+    left: 100%;
+  }
 }
 
 /* key frames for tree */
-@keyframes tree1{
-     from{left:-400px}
-    to{ left:100%}
+@keyframes tree1 {
+  from {
+    left: -400px;
+  }
+  to {
+    left: 100%;
+  }
 }
 
-@keyframes grass1{
-    from{left:-400px}
-    to{ left:100%}
+@keyframes grass1 {
+  from {
+    left: -400px;
+  }
+  to {
+    left: 100%;
+  }
 }
 
-@keyframes tree2{
-    from{left:-400px}
-    to{ left:100%}
+@keyframes tree2 {
+  from {
+    left: -400px;
+  }
+  to {
+    left: 100%;
+  }
 }
 
 /* keyframe for bird */
-@keyframes bird{
-    from{ right:-400px;}
-    to{right: 100%;}
+@keyframes bird {
+  from {
+    right: -400px;
+  }
+  to {
+    right: 100%;
+  }
+}
+/*left  helicopter*/
+@keyframes left-helicopter {
+  0% {
+    left: -100px;
+    top: 10%;
+    transform: rotateY(180deg) rotateZ(-20deg) scale(0.5);
+  }
+  50% {
+    left: 30%;
+    top: 72%;
+    transform: rotateY(180deg) rotateZ(0deg) scale(0.7);
+  }
+  100% {
+    top: 40%;
+    left: 100%;
+    transform: rotateY(180deg) rotateZ(10deg) scale(0.4);
+  }
+}
+
+/*Helicopter Flying from right */
+@keyframes flying-helicopter {
+  0% {
+    position: absolute;
+    top: 10%;
+    transform: scale(0.6) rotateZ(-10deg);
+  }
+  35% {
+    right: 75%;
+    transform: rotateZ(10deg) rotateY(50deg) scale(0.7);
+  }
+  45% {
+    transform: rotateY(150deg) scale(0.7);
+  }
+  60% {
+    right: 50%;
+    transform: rotateY(180deg) scale(0.8);
+    top: 60%;
+  }
+  80% {
+    top: 20%;
+    transform: rotateY(180deg) scale(0.7);
+  }
+  100% {
+    top: 10%;
+    transform: scale(0.6) rotateZ(-10deg);
+  }
+}
+/* Car */
+@keyframes car {
+  0% {
+    right: -200px;
+  }
+  100% {
+    right: 100%;
+  }
 }
