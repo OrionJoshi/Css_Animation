@@ -46,26 +46,7 @@ body::-webkit-scrollbar {
   display: flex;
   justify-content: center;
 }
-.helicopter-landed {
-  position: absolute;
-  z-index: 2;
-  left: 52.5%;
-  top: -25px;
-  transform: translate(-50%, 0) scale(0.55) rotateY(-10deg);
-}
-.helicopter-base {
-  position: absolute;
-  content: "";
-  height: 50px;
-  width: 90px;
-  background-color: #eee;
-  border: 5px solid dimgray;
-  box-shadow: 1px 6px 3px #222;
-  display: flex;
-  top: 35%;
-  left: 50%;
-  transform: translate(-50%, 0) skew(-5deg) rotateX(60deg);
-}
+
 .grass img {
   height: 100%;
 }
